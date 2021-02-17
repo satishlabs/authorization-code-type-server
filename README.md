@@ -1,3 +1,5 @@
+Auhtorization_code_type_server:
+
 Request Resource: http://localhost:12345/myapi/bookPrice/102
 
 Step1: Send the Request to Authorizarion Server with the following URL to Get
@@ -48,3 +50,25 @@ Output: {"bookId":105,"bookName":"Spring Microservices","price":540.0}
 
 
 
+Implicit Type Server:
+
+Step1: Send the Request to Authorizarion Server with the following URL to Get
+the User’s Permission
+A) Eendpoint - /oauth/authorize
+B) Query Parameters
+ - client_id,
+ - redirect_uri,
+ - response_type,
+ - scope 
+
+http://localhost:12345/oauth/authorize?client_id=satishapp&redirect_uri=http://localhost:5000/callback&response_type=token&scope=read_profile&state=hello
+
+Once hit the above  URL, We will get the access token directly from url like below url:
+
+http://localhost:5000/callback#access_token=d2ead0fb-3cc2-4e60-8a3f-a2dfd56a6085&token_type=bearer&state=hello&expires_in=120
+
+
+Step 2: Now access the BookPrice by providing the retrieved access
+You can now Invoke your Resources or REST API with the Access Token received
+above.
+curl -X GET http://localhost:12345/myapi/bookPrice/105 -H "authorization:Bearer d2ead0fb-3cc2-4e60-8a3f-a2dfd56a6085" 
