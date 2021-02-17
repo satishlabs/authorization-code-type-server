@@ -26,7 +26,7 @@ B) Query Parameters
  - redirect_uri,
  - grant_type,
  - scope
-curl -X POST http://localhost:12345/oauth/token --user satishapp:satish123 -H "content-type: application/x-www-form-urlencoded" -d "code=FpQMsh&grant_type=authorization_code&redirect_uri=http://localhost:5000/callback&scope=read_profile"
+curl -X POST http://localhost:12345/oauth/token --user satishapp:satish123 -H"content-type: application/x-www-form-urlencoded" -d"code=FpQMsh&grant_type=authorization_code&redirect_uri=http://localhost:5000/callback&scope=read_profile"
 
 Run the above curl command and get the access token:
 {
