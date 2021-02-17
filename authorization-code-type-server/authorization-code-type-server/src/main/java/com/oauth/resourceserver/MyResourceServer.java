@@ -17,6 +17,6 @@ public class MyResourceServer extends ResourceServerConfigurerAdapter{
 		 .and()
 		 	.requestMatchers()
 		 	.antMatchers("/myapi/**");
-		super.configure(http);
+		
 	}
 }

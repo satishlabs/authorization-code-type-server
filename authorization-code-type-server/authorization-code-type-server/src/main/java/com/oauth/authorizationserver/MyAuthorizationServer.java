@@ -12,7 +12,7 @@ public class MyAuthorizationServer extends AuthorizationServerConfigurerAdapter{
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
 		clients.inMemory()
-		 .withClient("satishcapp")
+		 .withClient("satishapp")
 		 .secret("satish123")
 		 .redirectUris("http://localhost:5000/callback")
 		 .authorizedGrantTypes("authorization_code")
